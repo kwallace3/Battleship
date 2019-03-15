@@ -15,4 +15,6 @@
 * GitHub is confusing
 * Starting the GUI aspect
 
-
+Katrina Wallace
+Jungeun Lee
+Qiuyu Chen
