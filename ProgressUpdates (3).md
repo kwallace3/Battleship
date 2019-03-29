@@ -29,7 +29,17 @@
 ### Any blocking issues/challenges need to be addressed?
 * Scheduling time to meet and get things done
 * GitHub is still weird
-* 
+
+## Week 3 (March 25 - March 29)
+
+### What did your team do last week?
+* started integrated codes to make them work together
+
+### What will you do this week?
+* Work on game design and implementation
+
+### Any blocking issues/challenges need to be addressed?
+* Finding time to meet and sync our codes
 
 Katrina Wallace<br/>
 Jungeun Lee<br/>
