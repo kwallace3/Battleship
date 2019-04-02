@@ -8,19 +8,23 @@ import _thread
 import socket
 
 # set up client
-host = input('Enter server host: ')
-if not host:
-    host = "localhost"
+port = 10000
+IP = input('Enter server host: ')
+if not IP:
+    IP = "localhost"
 
-port = input('Enter server port: ')
-if not port:
-    port = 10000
-else:
-    port = int(port)
-    
 # connect socket to server
-servsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-servsock.connect((host, port))
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((IP, port))
+
+# initiate gameplay
+waiting = True
+while waiting:
+    client = input("Welcome to Battleship! Please type your name and press ENTER to continue... ")
+    waiting = False
+
+print ("Please place your ships on the board. Once finished, press ENTER to continue...")
+
 
 
 
