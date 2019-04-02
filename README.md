@@ -13,18 +13,17 @@ Users will be able to connect to our game server and load a graphic user interfa
 ## Plan
 - Week 1 (March 11 - March 15):
 - [ ] Plan out project
-- [ ] Design server
 - Week 2 (March 18 - March 22):
 - [ ] Create game interface
-- [ ] Finish working on server
 - Week 3 (March 25 - March 29):
-- [ ] Finish graphics
-- [ ] Work on other game modes (ex. single player AI)
+- [ ] Develop client
+- [ ] Develop server
 - Week 4 (April 1 - April 5):
-- [ ] Implement/Finish game
+- [ ] Coordinate client, server, and UI interaction
 - Week 5 (April 8 - April 12):
+- [ ] Finish project development
+- Week 6 (April 15 - April 19) 
 - [ ] Project Report
-- [ ] Project Presentation
 ## Team Members
 - Katrina Wallace, Developer
 - Jungeun Lee, Developer
