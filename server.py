@@ -1,65 +1,32 @@
-import socket
-import threading
+from socket import AF_INET, socket, SOCK_STREAM
+from threading import Thread
 
-import ast
 class server:
-    def __init__(self):
+    def init(self):
+        HOST = ''
+        PORT = 1234
+
+        ADDR = (HOST, PORT)
         self.threads = []
-        self.IP = socket.gethost(socket.gethost())
+        self.ip = socket.gethostbyname(socket.gethostname())
         self.port = 10000
 
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.sock.bind((self.IP, self.port))
+        self.addr = []  #client ip and port
+        SERVER = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+        SERVER.bind(ADDR)
 
-        self.addr = []
+def sendMsg(self, m):
+    self.sock.sendto(str(m), (self.addr[0], self.addr[1])) #send msg to client.
+def accept_incoming_connections():
+    while True:
+        # Set up a new connection from the chat client
 
-        self.connected = False
-        self.severFinish = False
-        self.clientFinish = False
-
-        print("IP: " + self.IP + "Port: " + str(self.port))
-
-    def sendMsg(self, m):
-        self.sock.to(str(m), (self.addr[0], self.addr[1]))
-
-    def waitClient(self):
-        data = ''
-        while len(self.addr) == 0 or data != 'Done':
-            data, self.addr = self.sock.recivport(4000)
-            if data != '':
-                dataList = self.toList(data)
-                data =dataList[0]
-                self.opponentField = dataList[1]
-                self.opponentName = dataList[3]
-        self.clientFinish = True
-
-    def toList(self, l):
-        o = ast.literal_eval(l)
-        return 1
-
-    def connection(self):
-        while len(self.addr) == 0 or data != 'connecting':
-            data, self.addr = self.sock.recvfrom(1024)  # buffer size is 1024 bytes
-
-            print (str(self.addr[0]) + ' connected')
-            self.connected = True
-
-            self.sendMessage('connected')  # tells the client that it is connected
-
-
-            thread = threading.Thread(target=self.waitForClient)
-            thread.start()
-            self.threads.append(thread)
-
-
-            # if the client is not done with the setup,
-            # then stop the thread and wait for the message in the "main thread"
-            self.threads[0]._Thread__stop()
-            if self.clientDone == False:
-                print ("Waiting for client...")
-                self.waitForClient()
-
-            print ("Client done")
+        client, client_address = SERVER.accept()
+        #print("%s:%s has connected." % client_address)
+        # Send greeting messagew
+        client.send("Welcome to Battleship! Please type your name and press enter...".encode("utf8"))
+        # Start client thread to handle the new connection
+        Thread(target=handle_client, args=(client,)).start()
 
 
 
