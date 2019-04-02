@@ -12,12 +12,12 @@ Users will be able to connect to our game server and load a graphic user interfa
 4. Documentation
 ## Plan
 - Week 1 (March 11 - March 15):
-- [ ] Plan out project
+- [X] Plan out project
 - Week 2 (March 18 - March 22):
-- [ ] Create game interface
+- [X] Create game interface
 - Week 3 (March 25 - March 29):
-- [ ] Develop client
-- [ ] Develop server
+- [X] Develop client
+- [X] Develop server
 - Week 4 (April 1 - April 5):
 - [ ] Coordinate client, server, and UI interaction
 - Week 5 (April 8 - April 12):
