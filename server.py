@@ -1,10 +1,11 @@
+
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
 class server:
     def init(self):
         HOST = ''
-        PORT = 1234
+        PORT = 10000
 
         ADDR = (HOST, PORT)
         self.threads = []
@@ -27,7 +28,6 @@ def accept_incoming_connections():
         client.send("Welcome to Battleship! Please type your name and press enter...".encode("utf8"))
         # Start client thread to handle the new connection
         Thread(target=handle_client, args=(client,)).start()
-
 
 
 
