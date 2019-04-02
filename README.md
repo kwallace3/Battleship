@@ -1,6 +1,6 @@
 # Description
 ## What?
-Our **Peer-to-Peer Battleship Game** allows one or two players to virtually play a competitive game of Battleship.
+Our **server-client Battleship Game** allows one or two players to virtually play a competitive game of Battleship.
 ## Why?
 Battleship is a cool game to design for a project.
 ## How?
