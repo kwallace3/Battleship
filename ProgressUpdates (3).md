@@ -41,6 +41,17 @@
 ### Any blocking issues/challenges need to be addressed?
 * Finding time to meet and sync our codes
 
+## Week 4 (April 1 - April 5)
+
+### What did your team do last week?
+* started integrating codes and running them together
+
+### What will you do this week?
+* Finish game design and implentation
+
+### Any bloacking issues/challenges need to be addessed?
+* Debugging is taking more time than anticipated
+
 Katrina Wallace<br/>
 Jungeun Lee<br/>
 Qiuyu Chen<br/>
