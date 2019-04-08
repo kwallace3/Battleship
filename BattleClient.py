@@ -25,7 +25,7 @@ while waiting:
     client = input("Welcome to Battleship! Please type your name and press ENTER to continue... ")
     waiting = False
     
-print ("Please place your ships on the board. Once finished, press ENTER to continue...")
+print ("Please place your ships on the board.")
 
 
 print('starting...')
