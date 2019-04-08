@@ -15,6 +15,7 @@ class server:
         self.addr = []  #client ip and port
         SERVER = socket.socket (socket.AF_INET, socket.SOCK_DGRAM)
         SERVER.bind(ADDR)
+        SERVER.listen(1)
 
 def sendMsg(self, m):
     self.sock.sendto(str(m), (self.addr[0], self.addr[1])) #send msg to client.
