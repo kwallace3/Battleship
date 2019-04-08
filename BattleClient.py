@@ -14,7 +14,7 @@ if not IP:
     IP = "localhost"
 
 # connect socket to server
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.connect((IP, port))
 
 # initiate gameplay
