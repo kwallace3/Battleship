@@ -1,5 +1,5 @@
 
-from socket import AF_INET, socket, SOCK_STREAM
+from socket import AF_INET, socket, SOCK_DGRAM
 from threading import Thread
 
 class server:
@@ -13,7 +13,7 @@ class server:
         self.port = 10000
 
         self.addr = []  #client ip and port
-        SERVER = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+        SERVER = socket.socket (socket.AF_INET, socket.SOCK_DGRAM)
         SERVER.bind(ADDR)
 
 def sendMsg(self, m):
