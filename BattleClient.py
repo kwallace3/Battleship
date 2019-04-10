@@ -10,22 +10,23 @@ from tkinter import *
 from tkinter import font
 import random
 
+def setUpConn():
 # set up client
-port = 10000
-IP = "localhost"
-ADDR = (IP, port)
+	port = 10000
+	IP = "localhost"
+	ADDR = (IP, port)
 
 # connect socket to server
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.connect(ADDR)
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.connect(ADDR)
 
 # initiate gameplay
-waiting = True
-while waiting:
-    client = input("Welcome to Battleship! Please type your name and press ENTER to continue... ")
-    waiting = False
+	waiting = True
+	while waiting:
+    		IP = input("Welcome to Battleship! Please type your name and press ENTER to continue... ")
+    		waiting = False
     
-print ("Please place your ships on the board.")
+	print ("Please place your ships on the board.")
 
 
 print('starting...')
