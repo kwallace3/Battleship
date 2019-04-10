@@ -10,7 +10,7 @@ from tkinter import *
 from tkinter import font
 import random
 
-def setUpConn():
+class setUpConn():
 # set up client
 	port = 10000
 	IP = "localhost"
