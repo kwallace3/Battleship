@@ -8,6 +8,8 @@ from threading import Thread
 # Store client sockets
 import self as self
 
+class setUpConn():
+    
 clients = {}
 
 HOST = ''
