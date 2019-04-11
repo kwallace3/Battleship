@@ -1,34 +1,92 @@
-
-from socket import AF_INET, socket, SOCK_DGRAM
+#!/usr/bin/env
+# Server for multithreaded chat application
+# Usage: Open terminal/cmd and run "python ChatServer.py"
+from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
-class server:
-    def init(self):
-        HOST = ''
-        PORT = 10000
+# Set up chat server
+# Store client sockets
+clients = {}
 
-        ADDR = (HOST, PORT)
-        self.threads = []
-        self.ip = socket.gethostbyname(socket.gethostname())
-        self.port = 10000
+HOST = ''
+PORT = input('Enter server port: ')
+if not PORT:
+    PORT = 1000
+else:
+    PORT = int(PORT)
 
-        self.addr = []  #client ip and port
-        SERVER = socket.socket (socket.AF_INET, socket.SOCK_DGRAM)
-        SERVER.bind(ADDR)
-        SERVER.listen(1)
+BUFSIZ = 1024
+ADDR = (HOST, PORT)
 
-def sendMsg(self, m):
-    self.sock.sendto(str(m), (self.addr[0], self.addr[1])) #send msg to client.
+# Create a TCP server socket
+SERVER = socket(AF_INET, SOCK_STREAM)
+SERVER.bind(ADDR)
+
+
+# Handles incomming connections
 def accept_incoming_connections():
     while True:
         # Set up a new connection from the chat client
-
         client, client_address = SERVER.accept()
-        #print("%s:%s has connected." % client_address)
-        # Send greeting messagew
-        client.send("Welcome to Battleship! Please type your name and press enter...".encode("utf8"))
+        # print("%s:%s has connected." % client_address)
+        # Send greeting message
+        client.send("Welcome to NP chatroom! Please type your name and press enter...".encode("utf8"))
         # Start client thread to handle the new connection
         Thread(target=handle_client, args=(client,)).start()
 
 
+# Handles a single client connection, taking client socket as argument
+def handle_client(client):
+    # Get name from chat client
+    name = client.recv(BUFSIZ).decode("utf8")
+    # Send welcome message to chat client
+    welcome = 'Hello %s! If you ever want to quit, type {quit} to exit.' % name
+    client.send(welcome.encode("utf8"))
+    # Broadcast to all other connected chat clients about new client joining the chat room
+    msg = "%s has joined the chat!" % name
+    broadcast(msg.encode("utf8"))
+    # Add new pair client socket, name to the clients pool
+    clients[client] = name
+    print(msg)
 
+    while True:
+        # Receive message from client
+        msg = client.recv(BUFSIZ)
+        # If it is not a {quit} message from client, then broadcast the
+        # message to the rest of the connected chat clients
+        # Else server acks the {quit} message, deletes the client from
+        # the chat pool, and informs everyone
+        if msg != "{quit}".encode("utf8"):
+            broadcast(msg, name + ": ")
+        else:
+            client.send("{quit}".encode("utf8"))
+            client.close()
+            del clients[client]
+            msg = "%s has left the chat!" % name
+            print(msg)
+            broadcast(msg.encode("utf8"))
+            break
+
+
+# Broadcasts a message to all the clients, using prefix for name identification
+def broadcast(msg, prefix=""):
+    for sock in clients:
+        sock.send(prefix.encode("utf8") + msg)
+
+
+def main():
+    # Start listening to client connections
+    SERVER.listen(5)
+    print("Waiting for connection...")
+    # Start the accepting connections thread
+    ACCEPT_THREAD = Thread(target=accept_incoming_connections)
+    ACCEPT_THREAD.start()
+    # Wait for the accepting connections thread to stop
+    ACCEPT_THREAD.join()
+
+    # Close the server socket
+    SERVER.close()
+
+
+if __name__ == "__main__":
+    main()
