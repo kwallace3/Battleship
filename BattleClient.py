@@ -326,9 +326,13 @@ class Main(object):
                 client_socket.send(msg.encode("utf8"))
             except OSError:
                 break
+
     def takeTurn(self, player_num, grid_x, grid_y):
-        if not self.getGridSpaceContent(player_num, grid_x, grid_y) == None and not self.getGridSpaceContent(player_num,
-                                                                                                             grid_x,
+        msg = "Player {} attacks at {}{}".format(player_num, GRID_LETTERS[grid_y], grid_x)
+
+        print(msg)
+        """
+        if not self.getGridSpaceContent(player_num, grid_x, grid_y) == None and not self.getGridSpaceContent(player_num,                                                                                                     grid_x,
                                                                                                              grid_y) == "boat":
             return
 
@@ -343,9 +347,9 @@ class Main(object):
         else:
             content = "miss"
         self.setGridSpaceContent(player_num, grid_x, grid_y, content)
-        print("Player {} {} Player {} at {}{}".format(attacking_player, content, player_num, GRID_LETTERS[grid_y],
+        print("Player {} {} Player {}'s ships at {}{}".format(attacking_player, content, player_num, GRID_LETTERS[grid_y],
                                                       grid_x))
-
+"""
     def getWinner(self):
         """
         Returns the player number of the winner, if there is one
