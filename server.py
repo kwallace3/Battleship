@@ -6,12 +6,14 @@ from threading import Thread
 
 # Set up chat server
 # Store client sockets
+import self as self
+
 clients = {}
 
 HOST = ''
 PORT = input('Enter server port: ')
 if not PORT:
-    PORT = 1000
+    PORT = 2000
 else:
     PORT = int(PORT)
 
@@ -30,7 +32,7 @@ def accept_incoming_connections():
         client, client_address = SERVER.accept()
         # print("%s:%s has connected." % client_address)
         # Send greeting message
-        client.send("Welcome to NP chatroom! Please type your name and press enter...".encode("utf8"))
+        client.send("Welcome to Battleship! Please type your name and press enter...".encode("utf8"))
         # Start client thread to handle the new connection
         Thread(target=handle_client, args=(client,)).start()
 
@@ -40,18 +42,16 @@ def handle_client(client):
     # Get name from chat client
     name = client.recv(BUFSIZ).decode("utf8")
     # Send welcome message to chat client
-    welcome = 'Hello %s! If you ever want to quit, type {quit} to exit.' % name
-    client.send(welcome.encode("utf8"))
     # Broadcast to all other connected chat clients about new client joining the chat room
-    msg = "%s has joined the chat!" % name
-    broadcast(msg.encode("utf8"))
+
     # Add new pair client socket, name to the clients pool
     clients[client] = name
-    print(msg)
+
 
     while True:
         # Receive message from client
-        msg = client.recv(BUFSIZ)
+        #msg = client.recv(BUFSIZ)
+        msg = self.takeTurn(client.recv(BUFSIZ))
         # If it is not a {quit} message from client, then broadcast the
         # message to the rest of the connected chat clients
         # Else server acks the {quit} message, deletes the client from
@@ -62,8 +62,7 @@ def handle_client(client):
             client.send("{quit}".encode("utf8"))
             client.close()
             del clients[client]
-            msg = "%s has left the chat!" % name
-            print(msg)
+
             broadcast(msg.encode("utf8"))
             break
 
