@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """
 Created on Sat Mar 23 08:42:16 2019
@@ -17,7 +18,7 @@ if not HOST:
 
 PORT = input('Enter server port: ')
 if not PORT:
-    PORT = 1000
+    PORT = 2000
 else:
     PORT = int(PORT)
 
@@ -244,7 +245,7 @@ class Main(object):
                     if (h <= canvas_x and canvas_x <= h + self.grid_block_width) and (
                             k <= canvas_y and canvas_y <= k + self.grid_block_height):
                         return MAX_PLAYERS - p + 1, int(h / self.grid_block_width), int(k / self.grid_block_height) - (
-                                    (p - 1) * GRID_SIZE)
+                                (p - 1) * GRID_SIZE)
 
     def setGridSpaceContent(self, player_num, grid_x, grid_y, content):
         if player_num == 1:
@@ -307,6 +308,24 @@ class Main(object):
         return self.getShipPlacement(1, self.current_mouse_over_grid,
                                      self.boat_placement_queue[self.selected_ship_index], self.boat_rotation)
 
+    def receive(self):
+        while True:
+            try:
+                msg = client_socket.recv(BUFSIZ).decode("utf8")
+                if msg == "{quit}":
+                    client_socket.close()
+                else:
+                    if msg == self.takeTurn():
+                        print(msg)
+            except OSError:
+                break
+    def send(selfs):
+        while True:
+            try:
+                msg = input('')
+                client_socket.send(msg.encode("utf8"))
+            except OSError:
+                break
     def takeTurn(self, player_num, grid_x, grid_y):
         if not self.getGridSpaceContent(player_num, grid_x, grid_y) == None and not self.getGridSpaceContent(player_num,
                                                                                                              grid_x,
@@ -354,3 +373,4 @@ app = Main(root)
 root.deiconify()
 # app.draw()
 root.mainloop()
+
