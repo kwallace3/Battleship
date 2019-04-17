@@ -52,6 +52,14 @@
 ### Any bloacking issues/challenges need to be addessed?
 * Debugging is taking more time than anticipated
 
+## Week 5 (April 8 - April 12)
+
+### What did your team do last week?
+* Tried to figure out some errors to connect client and server
+
+### Any blocking issues/challenges need to be addessed?
+* Connecthing two clients and send data are more difficult than acticipated 
+
 Katrina Wallace<br/>
 Jungeun Lee<br/>
 Qiuyu Chen<br/>
