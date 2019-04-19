@@ -67,6 +67,9 @@
 * We cannot simply apply the sample of client/server from the Chatroom lab to the project
 * Building a game server and clients are different from building a chatroom server/client.
 
+## Week 6 (April 15 - April 19)
+* Project and report finished!
+
 Katrina Wallace: client<br/>
 Jungeun Lee: server<br/>
 Qiuyu Chen: game UI<br/>
