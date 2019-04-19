@@ -28,6 +28,7 @@ Users will be able to connect to our game server and load a graphic user interfa
 # Getting Started
 ## Install
 - download the zip file of the project from this git.
+- before running the program, install tkinker package to see the graphical user interface.
 ## Run
 - run server.py first and put port number.
 - run client.py, then put localhost and port number.
