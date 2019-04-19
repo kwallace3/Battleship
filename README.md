@@ -31,6 +31,7 @@ Users will be able to connect to our game server and load a graphic user interfa
 ## Run
 - run server.py first and put port number.
 - run client.py, then put localhost and port number.
+- game start, enjoy.
 # Features
 1. Feature #1: (10*10 grid) * 2 players
 2. Feature #2: Place 5 ships shaped green circle.
