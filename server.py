@@ -77,7 +77,7 @@ def broadcast(msg, prefix=""):
 
 def main():
     # Start listening to client connections
-    SERVER.listen(5)
+    SERVER.listen(2)
     print("Waiting for connection...")
     # Start the accepting connections thread
     ACCEPT_THREAD = Thread(target=accept_incoming_connections)
