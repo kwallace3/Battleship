@@ -26,7 +26,7 @@ Users will be able to connect to our game server and load a graphic user interfa
 - [X] Project Report
 # Getting Started
 ##Install
--
+-List the steps to install the project
 ##Run
 -run server.py first and put port number.
 -run client.py, then put localhost and port number.
