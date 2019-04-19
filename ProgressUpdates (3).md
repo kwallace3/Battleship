@@ -57,9 +57,16 @@
 ### What did your team do last week?
 * Tried to figure out some errors to connect client and server
 
+### What will you do this week?
+* Learning how to build a game server and clients
+* Trying to connect the client and server
+* Doing the best to make the game run
+
 ### Any blocking issues/challenges need to be addessed?
 * Connecthing two clients and send data are more difficult than acticipated 
+* We cannot simply apply the sample of client/server from the Chatroom lab to the project
+* Building a game server and clients are different from building a chatroom server/client.
 
-Katrina Wallace<br/>
-Jungeun Lee<br/>
-Qiuyu Chen<br/>
+Katrina Wallace: client<br/>
+Jungeun Lee: server<br/>
+Qiuyu Chen: game UI<br/>
