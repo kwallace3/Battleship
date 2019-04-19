@@ -1,8 +1,8 @@
 # Description
 ## What?
-Our **server-client Battleship Game** allows one or two players to virtually play a competitive game of Battleship.
+Our **server-client Battleship Game** allows two players to virtually play a competitive game of Battleship.
 ## Why?
-Battleship is a cool game to design for a project.
+Battleship is a cool game to design for a project. It is challenging to build a game server and clients. This project would help us learn and review the concept of Network programming especially socket-programming.
 ## How?
 Users will be able to connect to our game server and load a graphic user interface, they will also be connected to a player.
 ## Deliverables
@@ -27,7 +27,7 @@ Users will be able to connect to our game server and load a graphic user interfa
 
 # Getting Started
 ## Install
--List the steps to install the project
+- download the zip file of the project from this git.
 ## Run
 - run server.py first and put port number.
 - run client.py, then put localhost and port number.
@@ -38,6 +38,6 @@ Users will be able to connect to our game server and load a graphic user interfa
 3. Feature #3: If you succeed to attack, turn the color of circle green to red.
 # Demo Video
 # Team Members
-- Katrina Wallace, Developer
-- Jungeun Lee, Developer
-- Qiuyu Chen, Developer
+- Katrina Wallace, team leader, client Developer
+- Jungeun Lee, sever Developer
+- Qiuyu Chen, UI Developer
