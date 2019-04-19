@@ -6,10 +6,11 @@ Battleship is a cool game to design for a project. It is challenging to build a 
 ## How?
 Users will be able to connect to our game server and load a graphic user interface, they will also be connected to a player.
 ## Deliverables
-1. Battleship
-2. GUI
-3. Socket-programming
-4. Documentation
+1. Tkinter - Python's GUI package
+2. Socket-programming - client and server
+3. Github
+4. Threading
+5. Documentation
 ## Plan
 - Week 1 (March 11 - March 15):
 - [X] Plan out project
@@ -24,7 +25,6 @@ Users will be able to connect to our game server and load a graphic user interfa
 - [X] Finish project development
 - Week 6 (April 15 - April 19) 
 - [X] Project Report
-
 # Getting Started
 ## Install
 - download the zip file of the project from this git.
