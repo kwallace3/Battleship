@@ -24,18 +24,19 @@ Users will be able to connect to our game server and load a graphic user interfa
 - [X] Finish project development
 - Week 6 (April 15 - April 19) 
 - [X] Project Report
+
 # Getting Started
-##Install
+## Install
 -List the steps to install the project
-##Run
+## Run
 -run server.py first and put port number.
 -run client.py, then put localhost and port number.
-#Features
+# Features
 1. Feature #1: (10*10 grid) * 2 players
 2. Feature #2: Place 5 ships shaped green circle.
 3. Feature #3: If you succeed to attack, turn the color of circle green to red.
-#Demo Video
-## Team Members
+# Demo Video
+# Team Members
 - Katrina Wallace, Developer
 - Jungeun Lee, Developer
 - Qiuyu Chen, Developer
