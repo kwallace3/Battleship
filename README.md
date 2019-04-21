@@ -49,6 +49,7 @@ Users will be able to connect to our game server and load a graphic user interfa
 3. Feature #3: If you succeed on attack, the color of the circle turns from green to red
 4. Feature #4: Console displays results of user actions
 # Demo Video
+https://youtu.be/Ke1e9jre__o
 # Team Members
 - Katrina Wallace, team leader, client Developer
 - Jungeun Lee, sever Developer
